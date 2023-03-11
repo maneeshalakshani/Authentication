@@ -1,9 +1,11 @@
 const User = require('../../models/user/user')
 
+//testing method
 exports.test = async (req, res) => {
     res.send("My API")
 }
 
+//login method
 exports.login = async (req, res) => {
     const {email, password} = req.body
     User.findOne({email:email}, (err, user) =>{
@@ -19,6 +21,7 @@ exports.login = async (req, res) => {
     })
 }
 
+//register method
 exports.register = async (req, res) => {
     const { name, email, password } = req.body;
     User.findOne({email: email}, (err,user) => {

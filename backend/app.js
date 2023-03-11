@@ -10,9 +10,11 @@ app.use(express.urlencoded({ extended: true }))
 app.use(morgan("dev"));
 app.use(cors({origin: true, credentials: true}))
 
+//db connection and port
 const URI = process.env.MONGO_URI;
 const PORT = process.env.PORT;
 
+//connecting to the db
 mongoose.connect(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
